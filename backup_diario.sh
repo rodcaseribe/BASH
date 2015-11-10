@@ -23,7 +23,7 @@ then
         #mv PASTASEXTA/* /PASTASABADO
         #mv PASTAQUINTA/* /PASTASEXTA
         #mv PASTAQUARTA/* /PASTAQUINTA
-        #mv PASTATERCA/* /PASTASEGUNDA
+        #mv PASTATERCA/* /PASTAQUARTA
         #tar -cvzf /backup/BackupComprimido$(date +%Y_%m_%d).tar.gz /Pasta_a_ser_comprimida >> /saida.log
 fi
 
@@ -35,8 +35,8 @@ then
         #mv PASTASEGUNDA/* /PASTATERCA
         #mv PASTASABADO/* /PASTASEGUNDA
         #mv PASTASEXTA/* /PASTASABADO
-        #mv PASTASABADO/* /PASTASEGUNDA
-        #mv PASTASEGUNDA/* /PASTATERCA
+        #mv PASTAQUINTA/* /PASTASEXTA
+        #mv PASTAQUARTA/* /PASTAQUINTA
         #tar -cvzf /backup/BackupComprimido$(date +%Y_%m_%d).tar.gz /Pasta_a_ser_comprimida >> /saida.log
 fi
 
@@ -51,8 +51,6 @@ then
         #mv PASTASABADO/* /PASTASEGUNDA
         #mv PASTASEXTA/* /PASTASABADO
         #mv PASTAQUINTA/* /PASTASEXTA
-        #mv PASTAQUARTA/* /PASTAQUINTA
-        #mv PASTAQUINTA/* /PASTAQUARTA
         #tar -cvzf /backup/BackupComprimido$(date +%Y_%m_%d).tar.gz /Pasta_a_ser_comprimida >> /saida.log
 fi
 
@@ -66,8 +64,6 @@ then
         #mv PASTASEGUNDA/* /PASTATERCA
         #mv PASTASABADO/* /PASTASEGUNDA
         #mv PASTASEXTA/* /PASTASABADO
-        #mv PASTAQUINTA/* /PASTASEXTA
-        #mv PASTAQUARTA/* /PASTAQUINTA
         #tar -cvzf /backup/BackupComprimido$(date +%Y_%m_%d).tar.gz /Pasta_a_ser_comprimida >> /saida.log
 fi
 
@@ -78,16 +74,16 @@ then
         #rm -rf PASTASEXTA/*
         #mv PASTAQUINTA/* /PASTASEXTA
         #mv PASTAQUARTA/* /PASTAQUINTA
-        #mv PASTATERCA/* /PASTASSEGUNDA
+        #mv PASTATERCA/* /PASTASQUARTA
         #mv PASTASEGUNDA/* /PASTATERCA
-        #mv PASTASABADO/* /PASTASEXTA
+        #mv PASTASABADO/* /PASTASEGUNDA
         #tar -cvzf /backup/BackupComprimido$(date +%Y_%m_%d).tar.gz /Pasta_a_ser_comprimida >> /saida.log
 fi
 
 if test "$DIA" = "Dom"
 then
         echo -e "Inicializando Backup Diario em Domingo" "$log_dia"
-        echo domingo
+        echo nao_tem_backup_de_domingo
         
 
 else
