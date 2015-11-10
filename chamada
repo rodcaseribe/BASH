@@ -1,0 +1,5 @@
+
+/var/spool/cron/usuario
+
+
+0  4  *  *  *  ./backup
