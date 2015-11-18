@@ -1,4 +1,4 @@
-#!bin/bash
+#!/bin/bash
 select choice in one two "three four"
   do
     echo "$REPLY : $choice"
