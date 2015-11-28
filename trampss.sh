@@ -1,20 +1,38 @@
 #!/bin/bash
 
+################comando htpasswd###################
+
+#htpasswd -b autenticacao rodolfo naosaber   ###adiciona a senha nao saber
+
+#htpasswd -b -v autenticacao rodolfo naosaber  ##verifico se a senha eh correta
+
 
 
 ##corte1=$(cut -d : -f 1 usuario_senhas.txt)
 
-n=1
-while [ $n -le 5 ]
+###CONTANDO AS LINHAS#####
+x=$(wc -l usuarios_senhas.txt | cut -d ' ' -f 1)
+###########################
+#x=2
+for ((z=1;z<=x;z++))
 do
-corte1=$(tail -n $n usuario_senhas.txt > usuario2.txt)
-corte11=$(cut -d : -f 1 usuario2.txt)
-echo "$corte11";
-n=$(( n+1 ))
+##somente_usuario=$(tail -n $x usuarios_senhas.txt > somente_usuario.txt)
+
+####sed -n 2' p;' usuarios_senhas.txt | cut -d : -f 1
+
+somente_usuario=$(sed -n $z' p;' usuarios_senhas.txt | cut -d : -f 1)
+#somente_usuario2=$(cut -d : -f 1 $somente_usuario)
+#echo "$somente_usuario";
+##done
+##echo "########################################"  
+
+#somente_senha=$(tail -n $x usuarios_senhas.txt > somente_usuario.txt)
+#somente_senha=$(cut -d : -f 2 somente_usuario.txt)
+somente_senha=$(sed -n $z' p;' usuarios_senhas.txt | cut -d : -f 2)
+#echo "$somente_senha";
+
+htpasswd -b autenticacao "$somente_usuario" "$somente_senha"
 done
-
-
-
 
 
 #n=1
